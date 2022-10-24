@@ -38,7 +38,7 @@ public class ProductDetails {
         tb.getColumns().addAll(idcol,namecol,pricecol,quantitycol);
         tb.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
      //   tb.setPrefSize(SupplyChain.width,SupplyChain.height);
-        tb.setPrefSize(SupplyChain.width-100,SupplyChain.height);
+        tb.setPrefSize(SupplyChain.width-100,SupplyChain.height-100);
 
         productTable=tb;
         Pane Vpane=new Pane();
@@ -96,7 +96,7 @@ public class ProductDetails {
         tb.setItems(datasql);
         tb.getColumns().addAll(idcol,namecol,pricecol,quantitycol);
         tb.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-        tb.setPrefSize(SupplyChain.width-100,SupplyChain.height);
+        tb.setPrefSize(SupplyChain.width-100,SupplyChain.height-100);
         productTable=tb;
 
         Pane Vpane=new Pane();
