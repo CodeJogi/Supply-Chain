@@ -34,11 +34,11 @@ public class SupplyChain extends Application {
         toproot.setBackground(Background.fill(Color.RED));
 
 
-        Image img=new Image("C:\\Users\\jogi\\IdeaProjects\\SupplyChain\\src\\supplychain.jpg");
-        ImageView view=new ImageView(img);
-        view.setFitWidth(60);
-        view.setFitHeight(50);
-        view.setTranslateX(20);
+     //   Image img=new Image("C:\\Users\\jogi\\IdeaProjects\\SupplyChain\\src\\supplychain.jpg");
+    //    ImageView view=new ImageView(img);
+     //   view.setFitWidth(60);
+      //  view.setFitHeight(50);
+      //  view.setTranslateX(20);
 
         TextField textfill=new TextField();
         textfill.setTranslateX(width/2-150);
@@ -67,37 +67,32 @@ public class SupplyChain extends Application {
             @Override
             public void handle(ActionEvent actionEvent) {
                 body.getChildren().clear();
+                body.getChildren().add(pd.getAllProducts());
             }
         });
 
         signup=new Button("Sign Up");
         signup.setTranslateX(width/2+220);
         signup.setTranslateY(topHeight-30);
-        signup.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                String text= textfill.getText();
-                body.getChildren().clear();
-                body.getChildren().add(pd.getProductByName(text));
-            }
-        });
 
 
 
-        toproot.getChildren().addAll(view,textfill,search,login,signup);
+
+        toproot.getChildren().addAll(textfill,search,login,signup);
         return toproot;
     }
     private Pane createContent()
     {
         Pane root=new Pane();
-        root.setPrefSize(700,650);
+        root.setPrefSize(700,700);
 
 
 
         body=new Pane();
-       // body.setPrefSize(width,height);
-        body.setTranslateX(10);
-        body.getChildren().addAll(pd.getAllProducts());
+        body.setPrefSize(width,height-topHeight);
+        body.setTranslateY(topHeight);
+        body.setTranslateX(0);
+      //  body.getChildren().addAll(pd.getAllProducts());
 
         root.getChildren().addAll(headerPane(),body);
         return root;

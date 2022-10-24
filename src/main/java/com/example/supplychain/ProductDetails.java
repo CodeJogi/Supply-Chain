@@ -36,14 +36,15 @@ public class ProductDetails {
 
         tb.setItems(datasql);
         tb.getColumns().addAll(idcol,namecol,pricecol,quantitycol);
-        tb.columnResizePolicyProperty();
-        tb.setPrefSize(SupplyChain.width,SupplyChain.height);
+        tb.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+     //   tb.setPrefSize(SupplyChain.width,SupplyChain.height);
+        tb.setPrefSize(SupplyChain.width-100,SupplyChain.height);
 
         productTable=tb;
         Pane Vpane=new Pane();
         Vpane.getChildren().add(tb);
-        Vpane.setTranslateX(200);
-        Vpane.setTranslateY(150);
+        Vpane.setTranslateX(50);
+       // Vpane.setTranslateY(50);
         return Vpane;
 
     }
@@ -94,14 +95,14 @@ public class ProductDetails {
 
         tb.setItems(datasql);
         tb.getColumns().addAll(idcol,namecol,pricecol,quantitycol);
-        tb.columnResizePolicyProperty();
-
+        tb.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        tb.setPrefSize(SupplyChain.width-100,SupplyChain.height);
         productTable=tb;
 
         Pane Vpane=new Pane();
         Vpane.getChildren().add(tb);
-        Vpane.setTranslateX(200);
-        Vpane.setTranslateY(150);
+        Vpane.setTranslateX(50);
+      //  Vpane.setTranslateY(50);
         return Vpane;
 
     }
