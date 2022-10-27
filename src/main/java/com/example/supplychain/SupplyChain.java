@@ -74,10 +74,15 @@ public class SupplyChain extends Application {
                     String gCode= code.getText();
                     String gContact= contact.getText();
 
-                    Signup.feedData(gName,gEmail,gPass,gCode,gContact);
+                    try {
+                        Signup.feedData(gName,gEmail,gPass,gCode,gContact);
+                    } catch (NoSuchAlgorithmException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
                 else {
                     pass.setText("Password Mismatch");
+                    cpass.setText("Password Mismatch");
                 }
             }
         });
@@ -326,7 +331,7 @@ public class SupplyChain extends Application {
     public void start(Stage stage) throws IOException {
        // FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(createContent());
-        stage.setTitle("Supplychain Store");
+        stage.setTitle("Buy1Get1 Store");
         stage.setScene(scene);
         stage.show();
     }
